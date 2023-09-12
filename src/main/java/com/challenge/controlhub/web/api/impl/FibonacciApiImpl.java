@@ -40,7 +40,6 @@ public class FibonacciApiImpl {
 		ResponseEntity<BigInteger> response = null;
 		try{
 			return new ResponseEntity<>(fibonacciService.calculateFibonacci(n), HttpStatus.OK);
-								
 		} catch(Exception ex) {
 			logger.error(ex.getMessage());
 			response = new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
