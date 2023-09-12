@@ -16,7 +16,9 @@ import com.challenge.controlhub.service.FibonacciService;
 
 import lombok.extern.slf4j.Slf4j;
 
-
+/**
+ * Controller for the Fibonacci API.
+ */
 @Slf4j
 @RestController
 @RequestMapping("/api")
@@ -27,6 +29,12 @@ public class FibonacciApiImpl {
 	@Autowired
 	private FibonacciService fibonacciService;
 	
+	/**
+     * Gets the Fibonacci number at the specified index 'n'.
+     *
+     * @param n The index of the Fibonacci number to retrieve.
+     * @return ResponseEntity containing the Fibonacci number.
+     */
 	@GetMapping("/fibonacci/{n}")
 	public ResponseEntity<BigInteger> getFibonacci(@PathVariable int n) {
 		ResponseEntity<BigInteger> response = null;
@@ -39,5 +47,4 @@ public class FibonacciApiImpl {
 		}
 		return response;
 	}
-
 }
